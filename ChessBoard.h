@@ -11,7 +11,7 @@
 
 class ChessBoard{
 private:
-    piece* board[8][8];  //10x8 perche ci vanno ABCDEFG e 12345678
+    Piece* board[8][8];  //8x8 perche ci vanno ABCDEFG e 12345678
     
 public:
     ChessBoard();  //costruttore del chessboard
