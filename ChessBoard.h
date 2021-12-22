@@ -1,6 +1,5 @@
-
-#ifndef ChessBoard_h
-#define ChessBoard_h
+#ifndef CHESSBOARD_H
+#define CHESSBOARD_H
 
 #include <fstream>   //maybe we won't need tutti questi
 #include <iostream>
@@ -20,16 +19,16 @@ public:
     void Move(std::string position1, std::string position2); //move è metodo di scacchiera che chiama il move del pezzo specifico che si trova nella posizione 1.  GIUSTO????
     
     /* MOSSE SPECIALI */
-    bool isCheck(piece* king);
-    bool isCheckMate(piece* king);
-    bool isTie(piece* king);   //patta
-    bool canDoCastling(piece* king, piece* tower);   //arrocco
-    bool canDoEnpassant(piece* pawn1, piece* pawn2);  //avevamo detto di farlo nella classe pawn ma forse va in scacchiera.  YES???
+    bool isCheck(Piece* king);
+    bool isCheckMate(Piece* king);
+    bool isTie(Piece* king);   //patta
+    bool canDoCastling(Piece* king, Piece* rook);   //arrocco
+    bool canDoEnpassant(Piece* pawn1, Piece* pawn2);  //avevamo detto di farlo nella classe pawn ma forse va in scacchiera.  YES???
     //border check lo si fa nel main
-    bool canBePromoted(piece* pawn);
-    void Promotion(piece* pawn, piece* choiceOfPromotion);
+    bool canBePromoted(Piece* pawn);
+    void Promotion(Piece* pawn, Piece* choiceOfPromotion);
     //funzione eat() ?
-}
+};
 
 //forse per ogni pezzo servono getPosition() e getPossiblePositions()
 
