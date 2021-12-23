@@ -2,6 +2,8 @@
 #include "piece.h"
 
 
-ChessBoard::ChessBoard(std::string nomeFile){
+
+
+ChessBoard::ChessBoard(){
     
 }
