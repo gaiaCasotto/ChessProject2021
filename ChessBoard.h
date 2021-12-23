@@ -3,18 +3,22 @@
 
 #include <fstream>   //maybe we won't need tutti questi
 #include <iostream>
-#include <list>
+#include <vector>
 #include <string>
 
-#include "piece.h"
+#include "lib/piece.h"
+#include "Cell.h"
 
 class ChessBoard{
 private:
-    Place board[8][8];  //8x8 perche ci vanno ABCDEFG e 12345678
-    
+    Cell m_board[8][8];  //8x8 perche ci vanno ABCDEFG e 12345678
+    // std::vector<Piece*> listOfWhitePieces(16);
+    //vector<Piece*> listOfBlackPieces(16);
 public:
     ChessBoard();  //costruttore del chessboard
-    void printBoard(std::string nomeFile);
+    void WhitePieces();
+    void NewGame();
+    void printBoard(std::string& buf);
     bool isMoveAllowed(std::string position1, std::string position2); //controlla che la mossa sia lecita. Se non lo è, deve rifiutare il comando e chiederne un altro.  //chiama a seconda del pezzo che si trova nella position1, la funzione Move di quel pezzo e vede se può muoversi o no nella position2
     void Move(std::string position1, std::string position2); //move è metodo di scacchiera che chiama il move del pezzo specifico che si trova nella posizione 1.  GIUSTO????
     
